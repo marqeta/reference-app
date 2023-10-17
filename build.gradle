@@ -1,0 +1,27 @@
+plugins {
+  id 'java'
+  id 'org.springframework.boot' version '3.0.6'
+  id 'io.spring.dependency-management' version '1.1.0'
+  id 'org.openapi.generator' version '6.6.0'
+  id "io.freefair.lombok" version "8.0.1"
+  id 'checkstyle'
+}
+
+group = 'com.marqeta'
+version = '0.0.1'
+sourceCompatibility = '17'
+
+repositories {
+  mavenCentral()
+}
+
+dependencies {
+  implementation 'org.springframework.boot:spring-boot-starter-web'
+  implementation 'org.springframework.boot:spring-boot-starter-logging'
+  testImplementation 'org.springframework.boot:spring-boot-starter-test'
+  implementation 'com.fasterxml.jackson.dataformat:jackson-dataformat-xml:2.13.0'
+}
+
+tasks.named('test') {
+  useJUnitPlatform()
+}

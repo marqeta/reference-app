@@ -1,0 +1,23 @@
+ ,--.,--.,--------. ,------.         ,---.                                            ,---.
+     |  ||  |'--.  .--' |  .--. ' ,---. /  .-' ,---. ,--.--. ,---. ,--,--, ,---. ,---.   /  O  \  ,---.  ,---.
+,--. |  ||  |   |  |    |  '--'.'| .-. :|  `-,| .-. :|  .--'| .-. :|      \ .--'| .-. : |  .-.  || .-. || .-. |
+|  '-'  /|  |   |  |    |  |\  \ \   --.|  .-'\   --.|  |   \   --.|  ||  \ `--.\   --. |  | |  || '-' '| '-' '
+ `-----' `--'   `--'    `--' '--' `----'`--'   `----'`--'    `----'`--''--'`---' `----' `--' `--'|  |-' |  |-'
+                                                                                                 `--'   `--'
+This REST server exposes two main endpoints:
+
+POST /gateway
+POST /webhook
+
+The /gateway endpoint (applicable to Gateway JIT customers) receives all JIT Funding Requests and demonstrates how to
+send JIT Funding Response approving or denying the transaction. In this application, the approval or denial decision is
+based on a preset configuration. In your actual implementation,
+please adapt it with your own custom decision logic.
+
+The /webhook endpoint receives all JIT Funding Notifications sent by Marqeta and showcases different messages received,
+and how to handle certain message of interest for a given scenario.
+
+For Gateway JIT customers, the console log also provides pointers on how to manage the ledger based on the webhook messages received.
+For your production version, please integrate with a proper ledger and follow best practices as outlined in
+Marqeta's guide on ledger management with JIT funding.
+
